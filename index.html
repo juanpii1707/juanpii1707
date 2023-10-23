@@ -1,0 +1,279 @@
+<html lang="es-es">
+  <!--aqui definimos la seccion del encabezado del documento html-->
+  <head>
+    <!--especificamos los metadatos del documento html-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--definimos el titulo del encabezado del documento html-->
+    <title>Programador de Videojuegos</title>
+    <!--en el link enlazamos el documento con el archivo externo que es la hoja de estilos css y el boostrap tambien-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!--las etiquetas en mayusculas o minusculas son interpretados de la misma forma por el navegador web-->
+    <script
+      src="https://kit.fontawesome.com/fe9a345d71.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Aqui colocamos el codigo script de las flechas de nuestro slider-->
+    <script
+      src="https://kit.fontawesome.com/fe9a345d71.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Aqui colocamos el codigo interactivo para la barra en la navegacion-->
+    <script
+      src="https://kit.fontawesome.com/fe9a345d71.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!--aqui colocamos el script dela equis en nuestra barra navegable-->
+    <script
+      src="https://kit.fontawesome.com/fe9a345d71.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--aqui pegamos una fuente de google font para nuestro documento-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!--el cierre de la etiqueta va con un slash adelante de nombre de la etiqueta-->
+  <!--***************************************************************************************************************-->
+  <!--es el cuerpo del documento donde sera visible el documento web al usuario final-->
+  <body
+    id="cuerpo"
+    background="imagenes/4070176.jpg"
+    style="
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    "
+  >
+    <!--**************************************************************************************************************-->
+    <!--colocamos una "div" con la clase caja principal donde agruparemos las demas cajas dentro de esta caja-->
+<section>
+    <!--**********************************************************************************************************-->
+    <!--Aqui en nuestra etiqueta "header" en la cabeza visible del documento web va el banner y dos logos -->
+    <header class="header">
+      <a href="#" class="logo">D.V</a>
+      <!--con la etiqueta input hacemos mas interactivo la barra en modo tablet y celular para almacenar las listas de nuestra barra navegable-->
+      <input type="checkbox" id="cliquear" />
+      <!--Aqui colocamos la barra para nuestra pagina interactiva-->
+      <label for="cliquear" class="icons">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <i class="fa-solid fa-x" id="cierre-icon"></i>
+      </label>
+      <nav class="navbar">
+        <!--con la etiqueta "a" llamada ancla, creamos una fuente que nos enlaza a otras direcciones o documentos-->
+        <a href="#" style="--i: 0">Inicio</a>
+        <a href="#" style="--i: 1">Sobre mí</a>
+        <a href="#" style="--i: 2">Proyectos</a>
+        <a href="#" style="--i: 3">Contactame</a>
+      </nav>
+    </header>
+    <!--cerramos la etiqueta "header"-->
+    <!--**********************************************************************************************************-->
+    <!--Aqui colocamos un slider-->
+    <!--Aqui colocamos el contenedor de nuestro slider-->
+    <div id="divbanner">
+      <section id="banner">
+        <!--Aqui colocaremos el primer slider-->
+        <div class="slider-frame-principal" id="sliderprincipal1">
+          <div class="slider-frame" id="slider1">
+            <img src="imagenes/3788212.jpg" alt="" />
+          </div>
+          <div class="flechas">
+            <a href="#sliderprincipal3">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a href="#sliderprincipal2">
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!--Aqui cerramos el primer slider-->
+        <!--Aqui colocaremos el segundo slider-->
+        <div class="slider-frame-principal" id="sliderprincipal2">
+          <div class="slider-frame" id="slider2">
+            <img src="imagenes/20945449.jpg" alt="" />
+          </div>
+          <div class="flechas">
+            <a href="#sliderprincipal1">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a href="#sliderprincipal3">
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!--Aqui cerramos el segundo slider-->
+        <!--Aqui colocaremos el tercer slider-->
+        <div class="slider-frame-principal" id="sliderprincipal3">
+          <div class="slider-frame" id="slider3">
+            <img src="imagenes/5v3v_5kcq_220428.jpg" alt="" />
+          </div>
+          <div class="flechas">
+            <a href="#sliderprincipal2">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a href="#sliderprincipal1">
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!--Aqui cerramos el tercer slider-->
+      </section>
+    </div>
+    <!--Aqui cerramos el slider-->
+    <!--***********************************************************************************************************-->
+    <!--Aqui colocamos las tarjetas de descripcion-->
+      <div class="contenido-tarjetas">
+        <h1>PLATAFORMAS</h1>
+        <div class="lista-tarjetas">
+          <div class="card">
+            <img src="imagenes/6372480.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#">Leer Más</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="imagenes/6372480.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#">Leer Más</a>
+            </div>
+          </div>
+        </div>
+        <div class="lista-tarjetas">
+          <div class="card">
+            <img src="imagenes/6372480.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#">Leer Más</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="imagenes/6372480.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#">Leer Más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--Aqui cerramos las tarjetas verticales de descripcion-->
+    <!--*********************************************************************************************************-->
+    <!--aqui colocamos el div sobre nuestra presentacion*************************************-->
+      <div id="tarjeta-horizontal">
+        <div class="imagen-presentacion">
+          <img src="imagenes/lobo-colorido-fondo-negro.jpg" alt="" />
+        </div>
+        <div class="texto-presentacion">
+          <h1>¿Quien Soy?</h1>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+      </div>
+    <!--aqui cerramos el div de nuestra presentacion-->
+    <!--*********************************************************************************************************-->
+    <!--aqui hacemos un formulario-->
+    <div id="formulario">
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <!--*********************************************************************************************************-->
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure class="figura">
+            <a href="#">
+              <img src="imagenes/bomb_9766419.png" alt="logo-1">
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>
+            SOBRE NOSOTROS
+          </h2>
+          <P>sdsdfsdfsdgsdgsdgsdgsd</P>
+          <P>sdsdfsdfsdgsdgsdgsdgsd</P>
+        </div>
+        <div class="box">
+          <h2>
+            SIGUENOS
+          </h2>
+          <div class="red-social">
+            <a href="#" class="fa">
+              <img src="imagenes/827996141691636542.svg" alt="">
+            </a>
+            <a href="#" class="fa">
+              <img src="imagenes/827996141691636542.svg" alt="">
+            </a>
+            <a href="#" class="fa">
+              <img src="imagenes/827996141691636542.svg" alt="">
+            </a>
+            <a href="#" class="fa">
+              <img src="imagenes/827996141691636542.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small> © copyrihgt @ 2023 <b>-todos los derechos reservados</b></small>
+      </div>
+    </footer>
+  <!--aqui cerramos el body-->
+  </body>
+</html>
