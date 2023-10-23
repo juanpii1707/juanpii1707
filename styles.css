@@ -1,0 +1,486 @@
+/*ejemplo de estilos por etiqueta*/
+/*asignamos estilos a todos los elementos en general con el asterisco para que tengan
+ un punto de referencia de donde partir, en general se le da al inicio un margen de cero 
+ y un padding de cero para no repetir el proceso en cada selector de estilo que creemos*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Black Ops One";
+  box-sizing: border-box;
+}
+/*------------------------------------------------------------------------------------------------------------*/
+/*aqui le damos estilo a la etiqueta "body", que contiene la clase cuerpo, con un fondo como una imagen jpg*/
+#cuerpo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  display: block;
+}
+/*------------------------------------------------------------------------------------------------------------*/
+/*aqui le damos estilo a la caja principal de nuestra etiqueta "div"*/
+
+/*------------------------------------------------------------------------------------------------------------*/
+/*aqui en esta linea colocamos el id de la etiqueta header*/
+.header {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  height: 80px;
+  padding: 1.5rem 10%;
+  margin: 15px auto;
+  display: flex;
+  /*justificamos las fuentes entre espacios*/
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  left: 0;
+  backdrop-filter: blur(50px);
+  /*le damos un indice de -1*/
+  z-index: -1;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+.header:hover:after {
+  left: 100%;
+}
+/*aqui el logo de nuestra pagina web que estara en la barra navegable de nuestro documento web*/
+.logo {
+  /*le indicamos el tamaño de la fuente*/
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  /*le damos el grosor de la fuente logo*/
+  font-weight: 700;
+}
+.navbar {
+  padding: 0;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+/*aqui la barra navegable de nuestro documento web donde le daremos estilo con los hipervinculos*/
+.navbar a {
+  font-size: 1.15rem;
+  margin: 0.3rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  margin-left: 2rem;
+  color: #fff;
+}
+#cliquear {
+  display: none;
+}
+/*le damos estilo a la barra de 3 lineas*/
+.icons {
+  right: 5%;
+  position: absolute;
+  font-size: 2.8rem;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+}
+/*con el estilo media le damos los parametros a la pagina al ir minimizando en el punto de rotura para que se acople con un maximo de 992 pixel*/
+@media (max-width: 992px) {
+  .header {
+    padding: 1.5rem 10%;
+  }
+}
+/* aqui el estilo media le damos los parametros, donde la pagina apartir de 768 pixeles ocurre el punto de rotura de la pagina, muestra la barra navegable*/
+@media (max-width: 770px) {
+  .logo {
+    padding: 0.1px;
+  }
+  .icons {
+    /*mostramos la barra bloque apartir de 768px*/
+    display: inline-flex;
+  }
+  .icons #cierre-icon {
+    display: none;
+  }
+  #cliquear:checked ~ .icons #menu-icon {
+    display: none;
+  }
+  #cliquear:checked ~ .icons #cierre-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    display: block;
+    transition: 0.3s ease;
+    /*con este estilo hacemos que el desbordamiento(overflow) se oculte cuando este la barra*/
+    overflow: hidden;
+  }
+  #cliquear:checked ~ .navbar {
+    height: 17.7rem;
+  }
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-15px);
+    transition: 0.3s ease;
+    opacity: 0;
+  }
+  #cliquear:checked ~ .navbar a {
+    transform: translateY(0);
+    transition-delay: calc(0.15s * var(--i));
+    opacity: 1;
+  }
+}
+/*cerramos el estilo media de 777px que es el punto de ruptura de la pagina*/
+/*------------------------------------------------------------------------------------------------------------**/
+/*le vamos a dar a las etiquetas "a" un link con sus 4 estados*/
+a:link {
+  color: beige;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: darkseagreen;
+}
+a:active {
+  color: grey;
+}
+/*ceramos os 4 estados de los links*/
+/*------------------------------------------------------------------------------------------------------------*/
+#divbanner {
+  width: 100%;
+  height: 710px;
+  display: flex;
+  flex: 1 0 auto;
+  max-width: 1000px;
+  min-width: 320px;
+  margin: -4% auto;
+  position: relative;
+  overflow: hidden;
+}
+#banner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+}
+.slider-frame-principal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+.slider-frame {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.flechas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+#sliderprincipal1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3.5rem;
+}
+#sliderprincipal1 img {
+  width: 100%;
+  height: 100%;
+}
+#slider1 {
+  background-size: contain;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+#slider1 img {
+  background-size: contain;
+  max-width: 100%;
+}
+#sliderprincipal2 {
+  justify-content: center;
+  font-size: 3.5rem;
+  display: flex;
+}
+#sliderprincipal2 img {
+  width: 100%;
+  height: 100%;
+}
+#slider2 {
+  justify-content: center;
+  max-width: 100%;
+  /*aqui modificamos las imagenes para adaptarlas a los distintos tamaños que deba ajustarse*/
+  display: flex;
+  /*aqui como su nombre lo indica las cajas donde estan las imagenes, que son los div, deberan adaptarse en columnas*/
+  flex-direction: column;
+  /*aqui cuando se encoja o agrande la imagen*/
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: 100%;
+}
+#sliderprincipal3 {
+  justify-content: center;
+  font-size: 3.5rem;
+  display: flex;
+}
+#sliderprincipal3 img {
+  width: 100%;
+  height: 100%;
+}
+#slider3 {
+  background-size: contain;
+  justify-content: center;
+  max-width: 100%;
+  /*aqui modificamos las imagenes para adaptarlas a los distintos tamaños que deba ajustarse*/
+  display: flex;
+  /*aqui como su nombre lo indica las cajas donde estan las imagenes, que son los div, deberan adaptarse en columnas*/
+  flex-direction: column;
+  /*aqui cuando se encoja o agrande la imagen*/
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: 100%;
+}
+/*------------------------------------------------------------------------------------------------------------*/
+/*aqui colocamos una nueva linea de estilo para nuestro nueva pagina web*/
+.contenido-tarjetas {
+  width: 100%;
+  height: 100%;
+  margin: 6%;
+  padding: 3%;
+  right: 5%;
+  text-align: center;
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+.contenido-tarjetas h1 {
+  color: #fff;
+}
+.lista-tarjetas {
+  display: block;
+  width: 100%;
+  /*aqui las tarjetas se pueden controlar dentro de nuestro section/div*/
+  display: flex;
+  max-width: 1000px;
+  margin: 1px auto;
+  flex-flow: wrap;
+}
+.card {
+  width: 22rem;
+  margin: 4% auto;
+  border-radius: 6px;
+  background: scroll;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  transition: all 400ms ease;
+  cursor: default;
+  background-color: blueviolet;
+  border: 2px solid rgb(67, 1, 130);
+}
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+  transform: translateY(-5%);
+}
+.card-body a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+  color: floralwhite;
+  border: 2px solid floralwhite;
+  transition: all 400ms ease;
+}
+.card-body a:link {
+  color: #fff;
+}
+.card-body a:visited {
+  color: white;
+  background-color: #fff;
+}
+.card-body a:hover {
+  color: rgb(137, 45, 243);
+  background-color: #fff;
+}
+.card-body a:active {
+  color: rgb(86, 18, 164);
+  background-color: #fff;
+}
+.card-text {
+  color: #fff;
+  line-height: 1.5;
+}
+/*-----------------------------------------------------------------------------------------------------------------*/
+#tarjeta-horizontal {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #2e6edb;
+  min-width: 320px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /*flex-flow: wrap;*/
+}
+.imagen-presentacion {
+  width: 100%;
+  height: 100%;
+  float: left;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+.imagen-presentacion img {
+  width: 100%;
+  height: 100%;
+  float: left;
+  display: block;
+  border-radius: 80%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.502);
+}
+.texto-presentacion {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  float: right;
+  display: block;
+  padding: 5%;
+  margin-top: 15%;
+  text-align: center;
+}
+.texto-presentacion h1 {
+  color: black;
+}
+.card-text {
+  color: black;
+  font-size: 20px;
+}
+/*-----------------------------------------------------------------------------------------------------------------*/
+#formulario {
+  width: 100%;
+  height: 100%;
+  background-color: cornflowerblue;
+  padding: 15%;
+  margin-top: 10%;
+  font-size: 20px;
+}
+/*-----------------------------------------------------------------------------------------------------------------*/
+.pie-pagina {
+  height: 200px;
+  width: 100%;
+  padding: 0;
+  margin: 15% 0 0 0;
+  display: block;
+}
+.grupo-1 {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  background-color: darkmagenta;
+}
+.box {
+  width: 100%;
+  height: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  margin-top: 5%;
+}
+.figura {
+  width: 250px;
+}
+.figura img {
+  width: 100%;
+  padding: 100%;
+  padding: 5%;
+}
+.box h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.box p {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.red-social a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  color: #fff;
+  margin-right: 10px;
+  background-color: brown;
+  text-align: center;
+  transition: all 300ms ease;
+}
+.red-social a:hover {
+  color: blue;
+}
+.fa img {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+}
+.grupo-2 {
+  background-color: blueviolet;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
+}
+.grupo-2 small {
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  .grupo-1 {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    background-color: darkmagenta;
+  }
+}
